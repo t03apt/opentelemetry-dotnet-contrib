@@ -32,4 +32,9 @@
     <PackageReference Include="System.Text.Json" Version="8.0.0" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <PackageId>tpapp.Instrumentation.ConfluentKafka</PackageId>
+    <MinVerDefaultPreReleaseIdentifiers>preview.1</MinVerDefaultPreReleaseIdentifiers>
+  </PropertyGroup>
+
 </Project>
