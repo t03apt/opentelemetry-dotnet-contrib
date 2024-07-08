@@ -34,7 +34,7 @@
 
   <PropertyGroup>
     <PackageId>tpapp.Instrumentation.ConfluentKafka</PackageId>
-    <MinVerDefaultPreReleaseIdentifiers>preview.2</MinVerDefaultPreReleaseIdentifiers>
+    <MinVerDefaultPreReleaseIdentifiers>preview.3</MinVerDefaultPreReleaseIdentifiers>
   </PropertyGroup>
 
 </Project>

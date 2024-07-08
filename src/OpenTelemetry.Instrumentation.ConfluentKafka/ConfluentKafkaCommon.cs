@@ -8,10 +8,12 @@ using OpenTelemetry.Trace;
 
 namespace OpenTelemetry.Instrumentation.ConfluentKafka;
 
-internal static class ConfluentKafkaCommon
+#pragma warning disable RS0016 // Add public types and members to the declared API
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+public static class ConfluentKafkaCommon
 {
-    internal static readonly string InstrumentationName = typeof(ConfluentKafkaCommon).Assembly.GetName().Name!;
-    internal static readonly string InstrumentationVersion = typeof(ConfluentKafkaCommon).Assembly.GetPackageVersion();
+    public static readonly string InstrumentationName = typeof(ConfluentKafkaCommon).Assembly.GetName().Name!;
+    public static readonly string InstrumentationVersion = typeof(ConfluentKafkaCommon).Assembly.GetPackageVersion();
     internal static readonly ActivitySource ActivitySource = new(InstrumentationName, InstrumentationVersion);
     internal static readonly Meter Meter = new(InstrumentationName, InstrumentationVersion);
     internal static readonly Counter<long> ReceiveMessagesCounter = Meter.CreateCounter<long>(SemanticConventions.MetricMessagingReceiveMessages);
@@ -19,3 +21,5 @@ internal static class ConfluentKafkaCommon
     internal static readonly Counter<long> PublishMessagesCounter = Meter.CreateCounter<long>(SemanticConventions.MetricMessagingPublishMessages);
     internal static readonly Histogram<double> PublishDurationHistogram = Meter.CreateHistogram<double>(SemanticConventions.MetricMessagingPublishDuration);
 }
+#pragma warning restore RS0016 // Add public types and members to the declared API
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
