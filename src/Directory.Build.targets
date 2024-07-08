@@ -2,12 +2,12 @@
   <Import Project="..\Directory.Build.targets" Condition="Exists('..\Directory.Build.targets')" />
   <Import Project="$(RepoRoot)\build\Common.targets" />
 
-  <ItemGroup>
+  <!-- <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="$(MicrosoftSourceLinkGitHubPkgVer)">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
+  </ItemGroup> -->
 
   <PropertyGroup>
     <TargetFrameworkMonikerAssemblyAttributesPath>$([System.IO.Path]::Combine('$(IntermediateOutputPath)','$(TargetFrameworkMoniker).AssemblyAttributes$(DefaultLanguageSourceExtension)'))</TargetFrameworkMonikerAssemblyAttributesPath>
