@@ -22,6 +22,20 @@ public sealed class InstrumentedConsumerBuilder<TKey, TValue> : ConsumerBuilder<
     {
     }
 
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable RS0016 // Add public types and members to the declared API
+    public InstrumentedConsumerBuilder(IEnumerable<KeyValuePair<string, string>> config, bool enableMetrics, bool enabledTraces)
+        : base(config)
+    {
+        this.Options = new ConfluentKafkaConsumerInstrumentationOptions<TKey, TValue>
+        {
+            Metrics = enableMetrics,
+            Traces = enabledTraces,
+        };
+    }
+#pragma warning restore RS0016 // Add public types and members to the declared API
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
+
     internal ConfluentKafkaConsumerInstrumentationOptions<TKey, TValue>? Options { get; set; }
 
     /// <summary>
